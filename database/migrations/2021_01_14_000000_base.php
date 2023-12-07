@@ -91,6 +91,7 @@ return new class extends MigrationAbstract {
 
             $this->timestamps($table);
 
+            $table->unsignedBigInteger('country_id');
             $table->unsignedBigInteger('state_id');
         });
 
@@ -238,6 +239,17 @@ return new class extends MigrationAbstract {
             $table->unsignedBigInteger('maintenance_item_id');
         });
 
+        Schema::create('permission', function (Blueprint $table) {
+            $table->id();
+
+            $table->string('code')->unique();
+
+            $table->boolean('enabled')->default(0);
+            $table->boolean('admin')->default(0);
+
+            $this->timestamps($table);
+        });
+
         Schema::create('position', function (Blueprint $table) {
             $table->id();
 
@@ -254,7 +266,9 @@ return new class extends MigrationAbstract {
             $this->timestamps($table);
 
             $table->unsignedBigInteger('city_id')->nullable();
+            $table->unsignedBigInteger('country_id')->nullable();
             $table->unsignedBigInteger('device_id')->nullable();
+            $table->unsignedBigInteger('state_id')->nullable();
             $table->unsignedBigInteger('timezone_id');
             $table->unsignedBigInteger('trip_id');
             $table->unsignedBigInteger('user_id');
@@ -392,6 +406,15 @@ return new class extends MigrationAbstract {
             $table->unsignedBigInteger('user_id')->nullable();
         });
 
+        Schema::create('user_permission', function (Blueprint $table) {
+            $table->id();
+
+            $table->unsignedBigInteger('permission_id');
+            $table->unsignedBigInteger('user_id');
+
+            $this->timestamps($table);
+        });
+
         Schema::create('user_session', function (Blueprint $table) {
             $table->id();
 
@@ -443,6 +466,7 @@ return new class extends MigrationAbstract {
         Schema::table('city', function (Blueprint $table) {
             $table->spatialIndex('point');
 
+            $this->foreignOnDeleteSetNull($table, 'country');
             $this->foreignOnDeleteCascade($table, 'state');
         });
 
@@ -483,7 +507,9 @@ return new class extends MigrationAbstract {
             $table->spatialIndex('point');
 
             $this->foreignOnDeleteSetNull($table, 'city');
+            $this->foreignOnDeleteSetNull($table, 'country');
             $this->foreignOnDeleteSetNull($table, 'device');
+            $this->foreignOnDeleteSetNull($table, 'state');
             $this->foreignOnDeleteCascade($table, 'timezone');
             $this->foreignOnDeleteCascade($table, 'trip');
             $this->foreignOnDeleteCascade($table, 'user');
@@ -519,6 +545,13 @@ return new class extends MigrationAbstract {
 
         Schema::table('user_fail', function (Blueprint $table) {
             $this->foreignOnDeleteSetNull($table, 'user');
+        });
+
+        Schema::table('user_permission', function (Blueprint $table) {
+            $this->tableAddUnique($table, ['permission_id', 'user_id']);
+
+            $this->foreignOnDeleteCascade($table, 'permission');
+            $this->foreignOnDeleteCascade($table, 'user');
         });
 
         Schema::table('user_session', function (Blueprint $table) {

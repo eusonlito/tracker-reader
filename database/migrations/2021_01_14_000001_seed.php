@@ -1,9 +1,10 @@
 <?php declare(strict_types=1);
 
 use App\Domains\Configuration\Seeder\Configuration as ConfigurationSeeder;
-use App\Domains\Language\Seeder\Language as LanguageSeeder;
-use App\Domains\Server\Seeder\Server as ServerSeeder;
 use App\Domains\CoreApp\Migration\MigrationAbstract;
+use App\Domains\Language\Seeder\Language as LanguageSeeder;
+use App\Domains\Permission\Seeder\Permission as PermissionSeeder;
+use App\Domains\Server\Seeder\Server as ServerSeeder;
 use App\Domains\Timezone\Seeder\Timezone as TimezoneSeeder;
 
 return new class extends MigrationAbstract {
@@ -22,6 +23,7 @@ return new class extends MigrationAbstract {
     {
         (new ConfigurationSeeder())->run();
         (new LanguageSeeder())->run();
+        (new PermissionSeeder())->run();
         (new ServerSeeder())->run();
         (new TimezoneSeeder())->run();
     }

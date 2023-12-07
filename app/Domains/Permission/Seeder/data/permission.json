@@ -1,0 +1,427 @@
+[
+    {
+        "code": "alarm.index",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "alarm.create",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "alarm.detail",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "alarm.update",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "alarm.delete",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "alarm-notification.index",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "alarm-notification.delete",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "configuration.index",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "configuration.create",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "configuration.detail",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "configuration.update",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "device.index",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "device.create",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "device.map",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "device.detail",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "device.update",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "device.update.device-message",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "device.update.device-message.create",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "device.update.device-message.delete",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "device.update.transfer",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "device.delete",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "ip-lock.index",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "ip-lock.create",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "ip-lock.detail",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "ip-lock.update",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "ip-lock.delete",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "maintenance.index",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "maintenance.create",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "maintenance.detail",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "maintenance.update",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "maintenance.delete",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "maintenance-item.index",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "maintenance-item.create",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "maintenance-item.detail",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "maintenance-item.update",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "maintenance-item.delete",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "permission.index",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "permission.update",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "permission.update.user",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "profile.detail",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "profile.update",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "profile.update.user-session",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "refuel.index",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "refuel.create",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "refuel.map",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "refuel.detail",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "refuel.update",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "refuel.delete",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "server.index",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "server.create",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "server.log",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "server.status",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "server.detail",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "server.update",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "server.delete",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "server.update.parser",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "timezone.index",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "timezone.update",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "trip.index",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "trip.search",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "trip.detail",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "trip.update",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "trip.update.alarm-notification",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "trip.update.export",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "trip.update.map",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "trip.update.merge",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "trip.update.position",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "trip.update.stat",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "trip.delete",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "user.index",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "user.create",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "user.detail",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "user.update",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "user.update.permission",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "user.update.user-session",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "user.delete",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "user-session.index",
+        "enabled": true,
+        "admin": true
+    },
+    {
+        "code": "vehicle.index",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "vehicle.create",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "vehicle.detail",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "vehicle.update",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "vehicle.update.alarm",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "vehicle.update.alarm-notification",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "vehicle.update.device",
+        "enabled": true,
+        "admin": false
+    },
+    {
+        "code": "vehicle.delete",
+        "enabled": true,
+        "admin": false
+    }
+]
