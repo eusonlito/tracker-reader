@@ -116,17 +116,13 @@ class Byte
     /**
      * @param mixed $value
      * @param array $values
+     * @param int $true = 2
+     * @param int $false = 1
      *
      * @return int
      */
-    public function intIf(mixed $value, array $values): int
+    public function intIf(mixed $value, array $values, int $true = 2, int $false = 1): int
     {
-        foreach ($values as $each) {
-            if ($each === $value) {
-                return $this->int(2);
-            }
-        }
-
-        return $this->int(1);
+        return $this->int(in_array($value, $values) ? $true : $false);
     }
 }

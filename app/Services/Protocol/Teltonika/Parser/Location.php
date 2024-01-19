@@ -86,14 +86,22 @@ class Location extends ParserAbstract
 
         $this->buffer->int(1); // priority
 
-        $this->cache['longitude'] = $this->buffer->int(4) / 10000000;
-        $this->cache['latitude'] = $this->buffer->int(4) / 10000000;
+        $this->cache['longitude'] = $this->coordinate();
+        $this->cache['latitude'] = $this->coordinate();
 
         $this->buffer->int(2); // altitude
 
         $this->cache['direction'] = $this->buffer->int(2);
         $this->cache['signal'] = $this->buffer->int(1);
         $this->cache['speed'] = round($this->buffer->int(2) * 1.852, 2);
+    }
+
+    /**
+     * @return float
+     */
+    protected function coordinate(): float
+    {
+        return floatval(current(unpack('l', pack('l', $this->buffer->int(4)))) / 10000000);
     }
 
     /**
@@ -112,10 +120,7 @@ class Location extends ParserAbstract
         $this->attributesBytes(1);
         $this->attributesBytes(2);
         $this->attributesBytes(4);
-
-        if (in_array($this->codec, [Codec::CODEC_8, Codec::CODEC_8_EXT, Codec::CODEC_16])) {
-            $this->attributesBytes(8);
-        }
+        $this->attributesBytes(8);
     }
 
     /**
@@ -129,7 +134,7 @@ class Location extends ParserAbstract
 
         for ($i = 0; $i < $count; $i++) {
             $id = $this->buffer->intIf($this->codec, [Codec::CODEC_8_EXT, Codec::CODEC_16]);
-            $this->attributes[$id] = $this->buffer->int($bytes);
+            $this->attributes[$id] = $this->buffer->string($bytes);
         }
     }
 
